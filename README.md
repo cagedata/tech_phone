@@ -32,5 +32,5 @@ Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
 ## Todo
 
-[ ] Add guide for setting voice prompts in voicemail
-[ ] Make voice prompts dynamic to use `<Say>` or `<Play>`
+* [] Add guide for setting voice prompts in voicemail
+* [] Make voice prompts dynamic to use `<Say>` or `<Play>`
