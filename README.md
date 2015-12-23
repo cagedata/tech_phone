@@ -29,3 +29,8 @@ Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 7. Run the database migrations
     * `$ heroku run mix ecto.migrate`
 8. Drink beer! :beer:
+
+## Todo
+
+[ ] Add guide for setting voice prompts in voicemail
+[ ] Make voice prompts dynamic to use `<Say>` or `<Play>`
