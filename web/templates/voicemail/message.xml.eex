@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Response>
+  <Play><%= cdn_url "3-description.wav" %></Play>
+  <Record action="<%= voicemail_url @conn, :finalize %>" method="GET" transcribe="true" maxLength="60" />
+</Response>

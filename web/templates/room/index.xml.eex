@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Response>
+  <Gather timeout="10" numDigits="6" method="GET" action="<%= room_url @conn, :index %>">
+    <Say voice="woman">Welcome to Cage Data's Conference Room.</Say>
+    <Say voice="woman">Please enter your 6 digit conference code.</Say>
+  </Gather>
+</Response>

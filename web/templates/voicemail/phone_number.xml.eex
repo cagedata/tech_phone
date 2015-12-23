@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Response>
+  <Play><%= cdn_url "0-welcome.wav" %></Play>
+  <Gather action="<%= voicemail_url @conn, :name_company %>" numDigits="15" method="GET" timeout="20">
+    <Play><%= cdn_url "1-phone_number.wav" %></Play>
+    <Play><%= cdn_url "beep.wav" %></Play>
+  </Gather>
+</Response>
