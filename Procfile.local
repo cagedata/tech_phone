@@ -1,2 +1,2 @@
-web: mix phoenix.server
-database: postgres -D /usr/local/var/postgres
+postgres: postgres -D /usr/local/var/postgres
+phoenix: mix phoenix.server
