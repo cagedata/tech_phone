@@ -33,7 +33,7 @@ defmodule TechPhone.Endpoint do
   plug Plug.Session,
     store: :cookie,
     key: "_tech_phone_key",
-    signing_salt: Application.get_env(:tech_phone, TechPhone.Repo)[:signing_salt]
+    signing_salt: Application.get_env(:tech_phone, TechPhone.Endpoint)[:signing_salt]
 
   plug TechPhone.Router
 end

@@ -1,9 +1,9 @@
 defmodule TechPhone.Mailer do
   # This is broken unless you hardcode settings.
-  # @config [
-  #   domain: "https://api.mailgun.net/v3/" <> Application.get_env(:tech_phone, :mailgun)[:domain],
-  #   key: Application.get_env(:tech_phone, :mailgun)[:key]
-  # ]
+  @config [
+    domain: "https://api.mailgun.net/v3/" <> Application.get_env(:tech_phone, :mailgun)[:domain],
+    key: Application.get_env(:tech_phone, :mailgun)[:key]
+  ]
 
   use Mailgun.Client, @config
 
