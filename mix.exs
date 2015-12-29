@@ -10,7 +10,10 @@ defmodule TechPhone.Mixfile do
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
      aliases: aliases,
-     deps: deps]
+     deps: deps,
+     test_coverage: [tool: ExCoveralls],
+     preferred_cli_env: ["coveralls": :test, "coveralls.detail": :test, "coveralls.post": :test],
+    ]
   end
 
   # Configuration for the OTP application.
@@ -41,7 +44,8 @@ defmodule TechPhone.Mixfile do
      {:mailgun, "~> 0.1.2"},
      {:ibrowse, github: "cmullaparthi/ibrowse", tag: "v4.1.2"},
      {:httpotion, "~> 2.1.0"},
-     {:poison, "~> 1.5"}
+     {:poison, "~> 1.5"},
+     {:excoveralls, "~> 0.4", only: :test}
    ]
   end
 

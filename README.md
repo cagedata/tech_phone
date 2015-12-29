@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/cagedata/tech_phone.svg?branch=master)](https://travis-ci.org/cagedata/tech_phone)
+[![Coverage Status](https://coveralls.io/repos/cagedata/tech_phone/badge.svg?branch=master&service=github)](https://coveralls.io/github/cagedata/tech_phone?branch=master)
 
 # TechPhone
 
