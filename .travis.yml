@@ -1,0 +1,11 @@
+language: elixir
+elixir: 1.1.1
+services:
+  - postgresql
+otp_release:
+  - 18.2
+sudo: false
+before_script:
+  - mix deps.get --only test
+script:
+  - mix test
