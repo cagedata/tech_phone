@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/cagedata/tech_phone.svg?branch=master)](https://travis-ci.org/cagedata/tech_phone)
+
 # TechPhone
 
 To start your Phoenix app:
