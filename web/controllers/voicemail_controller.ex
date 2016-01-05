@@ -1,11 +1,16 @@
 defmodule TechPhone.VoicemailController do
-  use TechPhone.Web, :controller
-  alias TechPhone.Voicemail
-  alias TechPhone.Mailer
+  require IEx
 
-  # TODO: Add error handling throughout:
-  #   * When voicemail can't be found
-  #   * When voicemail can't be saved
+  use TechPhone.Web, :controller
+  alias TechPhone.{Voicemail, VoicemailStep, Mailer}
+  import Ecto.Query, only: [from: 2]
+
+  def step(conn, params) do
+    # Determine which step we're on
+    steps = TechPhone.Repo.all query(params["step"])
+    next_url = voicemail_url conn, :step, List.last(steps).order
+    render conn, "step.xml", current: List.first(steps).step, next: next_url
+  end
 
   def phone_number(conn, params) do
     voicemail_params = %{ call_sid: params["CallSid"], caller_id: params["From"], called_at: DateTime.now_utc}
@@ -43,5 +48,13 @@ defmodule TechPhone.VoicemailController do
     voicemail = Repo.update!(changeset)
     Task.async fn -> Mailer.send_voicemail(voicemail.id) end
     render conn, "finalize.xml"
+  end
+
+  defp query(step) do
+    unless is_nil step do
+      from step in VoicemailStep, where: step.order >= ^step, order_by: :order, limit: 2
+    else
+      from step in VoicemailStep, order_by: :order, limit: 2
+    end
   end
 end

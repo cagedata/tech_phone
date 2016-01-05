@@ -24,10 +24,12 @@ defmodule TechPhone.Router do
     get "/room", RoomController, :index
 
     scope "/voicemail" do
-      get "/", VoicemailController, :phone_number
+      get "/phone_number", VoicemailController, :phone_number
       get "/name-company", VoicemailController, :name_company
       get "/message", VoicemailController, :message
       get "/finalize", VoicemailController, :finalize
+      get "/:step", VoicemailController, :step
+      get "/", VoicemailController, :step
     end
   end
 end
